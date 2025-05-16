@@ -2,7 +2,7 @@
 
 ## Topology
 ![](Topology/topology.png)
-
+![](Topology/README.md)
 ## Implementation Scenarios
 
 ### Scenario 1: Stress Testing Suricata Performance
