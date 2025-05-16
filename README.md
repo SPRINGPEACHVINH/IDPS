@@ -1,37 +1,37 @@
-# Project IDS/IPS
-## 🔖 Tên đề tài:
-**Suricata - Phát hiện và ngăn chặn xâm nhập (IDS/IPS)**
+# Suricata – Intrusion Detection and Prevention System (IDS/IPS)
 
-## 🎯 Kịch bản triển khai
+## Topology
+![](Topology/topology.png)
 
-### 📌 Kịch bản 1: Stress test kiểm tra hiệu suất Suricata
-- **Mô tả**: Tạo lưu lượng mạng lớn và đa dạng để kiểm tra khả năng xử lý đa luồng của Suricata. Yêu cầu tối thiểu: 2 vCPU.
-- **Công cụ**: `htop`, `iperf3`, `hping3`
+## Implementation Scenarios
 
+### Scenario 1: Stress Testing Suricata Performance
+- **Description**: Generate high-volume and diverse network traffic to test Suricata’s multithreaded performance. Requires at least 2 vCPUs.
+- **Tools**: `htop`, `iperf3`, `hping3`
+- **Report**:
 ---
 
-### 📌 Kịch bản 2: NMAP máy client
-- **Mô tả**: Attacker sử dụng `nmap` để quét cổng trên máy user. Suricata phát hiện hoạt động bất thường (hơn 5 gói SYN/SYN+ACK trong 30s) và chặn IP.
-- **Công cụ**: `nmap`
-
+### Scenario 2: NMAP Port Scanning
+- **Description**: An attacker uses nmap to perform port scanning on a user machine. Suricata detects abnormal behavior (e.g., more than 5 SYN/SYN+ACK packets within 30 seconds) and blocks the source IP.
+- **Tools**: `nmap`
+- **Report**:
 ---
 
-### 📌 Kịch bản 3: SQL Injection vào Web Server
-- **Mô tả**: Tấn công SQL Injection vào trang DVWA trên Apache Web Server. Suricata phát hiện dựa trên signature, log và cảnh báo tấn công.
-- **Công cụ**:
-  - Host web: `Apache`, `DVWA`
-  - Tấn công: `Burp Suite`
-
+### Scenario 3: SQL Injection on Web Server
+- **Description**: Simulate an SQL Injection attack on a DVWA web application hosted on Apache. Suricata detects the intrusion using built-in signatures and logs the incident.
+- **Tools**:
+  - Web hosting: `Apache`, `DVWA`
+  - Attack: `Burp Suite`
+- **Report**:
 ---
 
-### 📌 Kịch bản 4: Phát hiện mã độc và trích xuất file từ gói tin
-- **Mô tả**: Máy client tải mã độc qua HTTP. Suricata quét sâu gói tin, phát hiện và lưu file độc hại vào thư mục phân tích, sau đó drop packet.
-- **Công cụ**: Suricata với tính năng file extraction
-
+### Scenario 4: Malware Detection and File Extraction
+- **Description**: A client downloads malware via HTTP. Suricata scans file checksums within packets, detects malicious content, and extracts the file to a quarantine folder for later analysis. The infected packet is then dropped.
+- **Report**:
 ---
 
-### 📌 Kịch bản 5: Phishing email và thực thi shellcode ở máy client
-- **Mô tả**: Attacker gửi email phishing để tiêm shellcode, chiếm quyền thực thi từ xa. Suricata phát hiện shellcode và ngắt kết nối.
-- **Công cụ**:
-  - Gửi mail: `Gmail`, `GoPhish`
-  - Tạo shellcode: `msfvenom` (Metasploit)
+### Scenario 5: Phishing Email and Shellcode Execution
+- **Description**: An attacker sends a phishing email containing embedded shellcode, aiming for remote code execution. Suricata detects the shellcode pattern and interrupts the connection.
+- **Tools**:
+  - Email delivery: `Gmail`, `GoPhish`
+- **Report**:
