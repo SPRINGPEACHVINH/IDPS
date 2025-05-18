@@ -140,4 +140,4 @@ Apply change:
 sudo systemctl restart systemd-resolved.service
 ```
 
-**Note:** Configure NAT Routing on Router is temporary, need to run command again when rebooting
+**Note:** Configure NAT Routing and DNS is temporary, need to run command again when rebooting
