@@ -34,26 +34,26 @@ drop http $EXTERNAL_NET any -> $HOME_NET any (msg:"Drop Black list checksum matc
 ## Demonstration
 ### 1. Create the MD5 Checksum List
 Create a file named md5chksum.list in the /var/lib/suricata/rules directory. Then add the MD5 checksum of the malicious file to this list.
-![](asset/1.png)
-![](asset/2.png)
+<p align="center"><img src="asset/1.png" /></p>
+<p align="center"><img src="asset/2.png" /></p>
 ### 2. Host the HTTP Server
 On the Kali machine, run a Python HTTP server to host the malware file:
 
 ```bash
 python3 -m http.server 8000
 ```
-![](asset/3.png)
+<p align="center"><img src="asset/3.png" /></p>
 ### 3. Download Attempt with Alert Rule
 The server attempts to download the file.
-![](asset/4.png)
+<p align="center"><img src="asset/4.png" /></p>
 Suricata logs a detection alert but allows the download.
-![](asset/5.png)
+<p align="center"><img src="asset/5.png" /></p>
 ### 4. Download Attempt with Drop Rule
 The server attempts to download the file again.
-![](asset/6.png)
+<p align="center"><img src="asset/6.png" /></p>
 Suricata drops the connection and stores the file.
-![](asset/7.png)
+<p align="center"><img src="asset/7.png" /></p>
 ### 5. Quarantine Storage
 Suricata stores the dropped and matched malicious files in the quarantine folder:
 `/var/log/suricata/quarantine/`
-![](asset/8.png)
+<p align="center"><img src="asset/8.png" /></p>
