@@ -65,20 +65,24 @@ Email is successfully sent with ELF attachment.
 Server receives and executes the file.
 <p align="center"><img src="asset/4.png" /></p>
 <p align="center"><img src="asset/5.png" /></p>
+
 **Result with Suricata rule:**
 Suricata blocks the SMTP packet with ELF attachment.
 <p align="center"><img src="asset/8.png" /></p>
 Suricata logs show detection and drop action.
 <p align="center"><img src="asset/9.png" /></p>
+
 ### Phase 2: Shellcode Delivery
 Attacker sends exploit with shellcode payload.
 <p align="center"><img src="asset/6.png" /></p>
+
 **Result with Suricata rule:**
 Packet is dropped. Reverse shell is not established.
 <p align="center"><img src="asset/10.png" /></p>
 <p align="center"><img src="asset/11.png" /></p>
 Suricata logs show NOP sled detection.
 <p align="center"><img src="asset/12.png" /></p>
+
 ### Phase 3: Reverse Shell Command Execution
 Server successfully establishes a reverse shell to Kali.
 <p align="center"><img src="asset/7.png" /></p>
