@@ -28,13 +28,13 @@
 
 ### Scenario 4: Malware Detection and File Extraction
 - **Description**: A client downloads malware via HTTP. Suricata scans file checksums within packets, detects malicious content, and extracts the file to a quarantine folder for later analysis. The infected packet is then dropped.
-- **Report**: [README](scenarios/scenario%204/README.md)
+- **Report**: [README](Scenarios/Scenario%204/README.md)
 ---
 
 ### Scenario 5: Phishing Email and Shellcode Execution
 - **Description**: An attacker sends a phishing email containing embedded shellcode, aiming for remote code execution. Suricata detects the shellcode pattern and interrupts the connection.
 - **Tools**: `swaks`
-- **Report**: [README](scenarios/scenario%205/README.md)
+- **Report**: [README](Scenarios/Scenario%205/README.md)
 
 ### Extra: Splunk Integration
 - **Report**: [README](scenarios/Extra/README.md)
