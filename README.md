@@ -37,4 +37,4 @@
 - **Report**: [README](Scenarios/Scenario%205/README.md)
 
 ### Extra: Splunk Integration
-- **Report**: [README](scenarios/Extra/README.md)
+- **Report**: [README](Scenarios/Extra/README.md)
