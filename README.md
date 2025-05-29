@@ -9,13 +9,11 @@
 ### Scenario 1: Stress Testing Suricata Performance
 - **Description**: Generate high-volume and diverse network traffic to test Suricata’s multithreaded performance. Requires at least 2 vCPUs.
 - **Tools**: `htop`, `iperf3`, `hping3`
-- **Report**:
 ---
 
 ### Scenario 2: NMAP Port Scanning
 - **Description**: An attacker uses nmap to perform port scanning on a user machine. Suricata detects abnormal behavior (e.g., more than 5 SYN/SYN+ACK packets within 30 seconds) and blocks the source IP.
 - **Tools**: `nmap`
-- **Report**:
 ---
 
 ### Scenario 3: SQL Injection on Web Server
@@ -23,7 +21,6 @@
 - **Tools**:
   - Web hosting: `Apache`, `DVWA`
   - Attack: `Burp Suite`
-- **Report**:
 ---
 
 ### Scenario 4: Malware Detection and File Extraction
